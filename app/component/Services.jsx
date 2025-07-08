@@ -3,54 +3,58 @@
 import { motion } from "framer-motion";
 import {
   FiVolume2,
-  FiSpeaker,
+  FiMic,
   FiCheckCircle,
   FiArrowRight,
+  FiCalendar,
 } from "react-icons/fi";
 import Image from "next/image";
 
-export default function ProfessionalGearShowcase() {
-  const equipmentList = [
+export default function ProfessionalServicesShowcase() {
+  const serviceList = [
     {
-      name: "Line Array Systems",
-      description: "High-output systems for 5,000+ capacity venues",
-      image: "/line-array-system.jpg",
+      name: "Live Event Sound",
+      description: "Professional audio solutions for concerts and festivals",
+      image: "/image12.jpg",
       features: [
-        "120dB continuous SPL",
-        "40Hz-18kHz frequency range",
-        "Weather-resistant enclosures",
+        "Line array systems for perfect coverage",
+        "Expert sound engineering team",
+        "Complete setup and teardown",
       ],
     },
     {
-      name: "Subwoofer Arrays",
-      description: "Ground-shaking bass for outdoor festivals",
-      image: "/subwoofer-array.jpg",
+      name: "Corporate AV",
+      description: "Flawless audio for conferences and presentations",
+      image: "/image23.jpg",
       features: [
-        'Dual 18" drivers',
-        "Cardioid configuration",
-        "5000W RMS power",
+        "Clear speech reinforcement",
+        "Wireless microphone systems",
+        "Live streaming audio support",
       ],
     },
     {
-      name: "Power Amplifiers",
-      description: "Tour-grade amplification systems",
-      image: "/power-amps.jpg",
+      name: "Musical Events",
+      description: "Professional recording and sound services",
+      image: "/image5.jpg",
       features: [
-        "DSP-controlled",
-        "8-channel capability",
-        "Overload protection",
+        "High-end studio equipment",
+        "Experienced audio engineers",
+        "Post-production services",
       ],
     },
   ];
 
   return (
-    <section id="equipment" className="relative py-24 overflow-hidden">
-      {/* Floating audio waves decoration */}
+    <section
+      id="services"
+      className="relative py-24 overflow-hidden bg-gray-50"
+    >
+      {/* Floating audio waves decoration - more subtle */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(3)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full border border-orange-200/30"
+            className="absolute rounded-full border border-orange-200/20"
             style={{
               width: `${Math.random() * 800 + 400}px`,
               height: `${Math.random() * 800 + 400}px`,
@@ -60,7 +64,7 @@ export default function ProfessionalGearShowcase() {
             animate={{
               x: [0, Math.random() * 100 - 50],
               y: [0, Math.random() * 100 - 50],
-              opacity: [0.02, 0.08, 0.02],
+              opacity: [0.01, 0.05, 0.01],
             }}
             transition={{
               duration: Math.random() * 30 + 30,
@@ -73,7 +77,7 @@ export default function ProfessionalGearShowcase() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header with creative layout */}
+        {/* Section Header with updated content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,27 +86,26 @@ export default function ProfessionalGearShowcase() {
           className="flex flex-col items-center mb-20"
         >
           <div className="inline-flex items-center gap-3 mb-4">
-            <FiVolume2 className="text-orange-500 text-xl" />
+            <FiMic className="text-orange-500 text-xl" />
             <span className="text-sm font-medium tracking-wider text-orange-500">
-              PROFESSIONAL GEAR
+              PROFESSIONAL SERVICES
             </span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-6">
             <span className="relative inline-block">
-              <span className="relative z-10">Premium Audio</span>
+              <span className="relative z-10">Premium Sound</span>
               <span className="absolute left-0 bottom-2 w-full h-3 bg-gradient-to-r from-orange-400/40 to-orange-500/40 -z-0"></span>
             </span>{" "}
-            <span className="text-orange-500">Equipment</span>
+            <span className="text-orange-500">Solutions</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl text-center leading-relaxed">
-            Cutting-edge sound systems designed for flawless performance at any
-            scale
+            Comprehensive audio services tailored to your event's specific needs
           </p>
         </motion.div>
 
-        {/* Equipment Showcase - Creative Cards */}
+        {/* Services Showcase - Updated Cards */}
         <div className="grid md:grid-cols-3 gap-8">
-          {equipmentList.map((item, index) => (
+          {serviceList.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -111,11 +114,11 @@ export default function ProfessionalGearShowcase() {
               viewport={{ once: true, margin: "-50px" }}
               className="group relative"
             >
-              {/* Decorative element */}
-              <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-orange-400/10 to-orange-600/10 opacity-0 group-hover:opacity-100 blur-md transition-all duration-300"></div>
+              {/* Decorative element - more subtle */}
+              <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-orange-400/5 to-orange-600/5 opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
 
               <div className="relative h-full bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group-hover:shadow-md transition-all">
-                {/* Equipment Image with hover effect */}
+                {/* Service Image with hover effect */}
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={item.image}
@@ -126,11 +129,19 @@ export default function ProfessionalGearShowcase() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent"></div>
                 </div>
 
-                {/* Equipment Details */}
+                {/* Service Details */}
                 <div className="p-6">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="bg-orange-500/10 p-2 rounded-lg">
-                      <FiSpeaker className="text-orange-500 text-xl" />
+                      {index === 0 && (
+                        <FiVolume2 className="text-orange-500 text-xl" />
+                      )}
+                      {index === 1 && (
+                        <FiMic className="text-orange-500 text-xl" />
+                      )}
+                      {index === 2 && (
+                        <FiCheckCircle className="text-orange-500 text-xl" />
+                      )}
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-gray-900">
@@ -150,7 +161,7 @@ export default function ProfessionalGearShowcase() {
                   </ul>
 
                   <button className="mt-6 flex items-center text-orange-500 font-medium group-hover:text-orange-600 transition-colors">
-                    View details{" "}
+                    Learn more{" "}
                     <FiArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
                   </button>
                 </div>
@@ -159,7 +170,7 @@ export default function ProfessionalGearShowcase() {
           ))}
         </div>
 
-        {/* Creative CTA */}
+        {/* Updated CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -171,12 +182,13 @@ export default function ProfessionalGearShowcase() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-orange-400/30 transition-all"
+              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-orange-400/30 transition-all flex items-center gap-3"
             >
-              Request Full Equipment Catalog
+              <FiCalendar className="text-white" />
+              Book a Consultation
             </motion.button>
             <p className="text-sm text-gray-500 mt-4">
-              Complete specs, pricing, and technical drawings available
+              Let's discuss how we can make your event sound perfect
             </p>
           </div>
         </motion.div>

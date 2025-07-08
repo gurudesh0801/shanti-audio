@@ -1,85 +1,108 @@
 "use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { FiArrowRight, FiVolume2 } from "react-icons/fi";
 
-export default function CaseStudies() {
-  const events = [
+import { motion } from "framer-motion";
+import { FiPlay, FiExternalLink } from "react-icons/fi";
+import Image from "next/image";
+
+export default function PortfolioShowcase() {
+  const portfolioItems = [
     {
-      title: "National Political Summit",
-      description: "High-clarity audio setup for political leaders and press.",
-      image: "/political-summit.jpg",
-      logo: "/client-logo-political.png",
-      category: "Political Event",
-      stats: [
-        { value: "10", label: "Mics" },
-        { value: "5000+", label: "Attendees" },
-        { value: "99.9%", label: "Uptime" },
-      ],
-    },
-    {
-      title: "Indie Music Night",
-      description: "Power-packed concert featuring indie artists.",
-      image: "/indie-music.jpg",
-      logo: "/client-logo-music.png",
-      category: "Musical Event",
-      stats: [
-        { value: "15kW", label: "Power" },
-        { value: "8", label: "Performers" },
-        { value: "20", label: "Speakers" },
-      ],
-    },
-    {
-      title: "Cultural Fest Parade",
+      id: 1,
+      title: "Music Festival",
+      category: "Live Sound",
       description:
-        "Festival-wide audio coverage for dance, drama, and speeches.",
-      image: "/cultural-fest.jpg",
-      logo: "/client-logo-festival.png",
-      category: "Festival Event",
-      stats: [
-        { value: "3", label: "Zones" },
-        { value: "25", label: "Speakers" },
-        { value: "12hr", label: "Coverage" },
-      ],
+        "Full audio production for 3-day outdoor festival with 20,000+ attendees",
+      image: "/image5.jpg",
+      videoLink: "https://example.com/videos/festival",
+      detailsLink: "/portfolio/festival",
     },
     {
-      title: "Startup Product Launch",
-      description: "Live event audio + visual setup for a tech product reveal.",
-      image: "/product-launch.jpg",
-      logo: "/client-logo-live.png",
-      category: "Live Event",
-      stats: [
-        { value: "100+", label: "Guests" },
-        { value: "4", label: "Screens" },
-        { value: "6", label: "Mics" },
-      ],
+      id: 2,
+      title: "Political Speech",
+      category: "Corporate AV",
+      description:
+        "Audio solutions for main stage and breakout rooms at international tech conference",
+      image: "/image18.jpg",
+      videoLink: "https://example.com/videos/conference",
+      detailsLink: "/portfolio/conference",
+    },
+    {
+      id: 3,
+      title: "Live Event",
+      category: "Event Handle",
+      description:
+        "Custom sound system design and installation for premium event venue",
+      image: "/image15.jpg",
+      videoLink: "https://example.com/videos/jazzclub",
+      detailsLink: "/portfolio/jazzclub",
+    },
+    {
+      id: 3,
+      title: "Live Event",
+      category: "Event Handle",
+      description:
+        "Custom sound system design and installation for premium event venue",
+      image: "/image23.jpg",
+      videoLink: "https://example.com/videos/jazzclub",
+      detailsLink: "/portfolio/jazzclub",
+    },
+    {
+      id: 3,
+      title: "Live Event",
+      category: "Event Handle",
+      description:
+        "Custom sound system design and installation for premium event venue",
+      image: "/image16.jpg",
+      videoLink: "https://example.com/videos/jazzclub",
+      detailsLink: "/portfolio/jazzclub",
+    },
+    {
+      id: 3,
+      title: "Live Event",
+      category: "Event Handle",
+      description:
+        "Custom sound system design and installation for premium event venue",
+      image: "/image13.jpg",
+      videoLink: "https://example.com/videos/jazzclub",
+      detailsLink: "/portfolio/jazzclub",
     },
   ];
 
+  const categories = [
+    "All Projects",
+    "Live Sound",
+    "Corporate AV",
+    "Permanent Installation",
+    "Special Events",
+  ];
+
   return (
-    <section className="relative py-20 overflow-hidden bg-[#faf5f0]">
-      {/* Floating organic shapes */}
-      <div className="absolute inset-0 overflow-hidden opacity-15">
-        {[...Array(20)].map((_, i) => (
+    <section
+      id="portfolio"
+      className="relative py-24 bg-gray-50 overflow-hidden"
+    >
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-orange-300/40"
+            className="absolute rounded-full border border-orange-200/20"
             style={{
-              width: Math.random() * 120 + 30,
-              height: Math.random() * 120 + 30,
+              width: `${Math.random() * 600 + 300}px`,
+              height: `${Math.random() * 600 + 300}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-              filter: "blur(20px)",
             }}
             animate={{
               x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 60 - 30],
-              opacity: [0.1, 0.2, 0.1],
+              y: [0, Math.random() * 100 - 50],
+              opacity: [0.01, 0.05, 0.01],
             }}
             transition={{
-              duration: Math.random() * 20 + 20,
+              duration: Math.random() * 40 + 40,
               repeat: Infinity,
               repeatType: "reverse",
+              ease: "easeInOut",
             }}
           />
         ))}
@@ -88,110 +111,110 @@ export default function CaseStudies() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          className="flex flex-col items-center mb-16"
         >
-          <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-orange-100 border border-orange-200 mb-6"
-          >
-            <FiVolume2 className="text-orange-700 text-xl" />
-          </motion.div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Events <span className="text-orange-700">We've Powered</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-6">
+            <span className="relative inline-block">
+              <span className="relative z-10">Our</span>
+              <span className="absolute left-0 bottom-2 w-full h-3 bg-gradient-to-r from-orange-400/40 to-orange-500/40 -z-0"></span>
+            </span>{" "}
+            <span className="text-orange-500">Portfolio</span>
           </h2>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Professional audio solutions for memorable experiences
+          <p className="text-lg text-gray-600 max-w-2xl text-center leading-relaxed">
+            Explore our successful projects and events where we delivered
+            exceptional audio experiences
           </p>
         </motion.div>
 
-        {/* Case Studies Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {events.map((event, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="group relative"
+        {/* Category Filter */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-3 mb-12"
+        >
+          {categories.map((category, index) => (
+            <button
+              key={index}
+              className={`px-5 py-2 rounded-full font-medium transition-all ${
+                index === 0
+                  ? "bg-orange-500 text-white shadow-md"
+                  : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
+              }`}
             >
-              {/* Card */}
-              <div className="h-full bg-white rounded-xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-md transition-all hover:border-orange-200">
-                {/* Image */}
-                <div className="relative h-40">
-                  <Image
-                    src={event.image}
-                    alt={event.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                  {/* Client logo */}
-                  <div className="absolute bottom-4 left-4 w-10 h-10 rounded-lg bg-white p-1 shadow-sm border border-orange-100">
-                    <div className="relative w-full h-full">
-                      <Image
-                        src={event.logo}
-                        alt="Client Logo"
-                        fill
-                        className="object-contain"
-                      />
-                    </div>
-                  </div>
-                </div>
+              {category}
+            </button>
+          ))}
+        </motion.div>
 
-                {/* Content */}
-                <div className="p-5">
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        {event.title}
-                      </h3>
-                      <p className="text-sm text-gray-700">
-                        {event.description}
-                      </p>
-                    </div>
-                    <motion.div
-                      whileHover={{ x: 2 }}
-                      className="hidden group-hover:block"
-                    >
-                      <FiArrowRight className="text-orange-600" />
-                    </motion.div>
-                  </div>
+        {/* Portfolio Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {portfolioItems.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all bg-white"
+            >
+              {/* Portfolio Item Image */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+              </div>
 
-                  {/* Stats */}
-                  <div className="flex justify-between mt-4 pt-4 border-t border-orange-100">
-                    {event.stats.map((stat, j) => (
-                      <div key={j} className="text-center">
-                        <p className="text-orange-700 font-bold">
-                          {stat.value}
-                        </p>
-                        <p className="text-xs text-gray-600 uppercase tracking-wider">
-                          {stat.label}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              {/* Portfolio Item Content */}
+              <div className="p-6">
+                <span className="inline-block text-orange-500 text-sm font-medium mb-2">
+                  {item.category}
+                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 mb-4">{item.description}</p>
+                <a
+                  href={item.detailsLink}
+                  className="inline-flex items-center text-orange-500 font-medium hover:text-orange-600 transition-colors"
+                >
+                  View case study
+                  <FiExternalLink className="ml-2" />
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* View all button */}
+        {/* CTA */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-center mt-12"
+          viewport={{ once: true }}
+          className="mt-20 text-center"
         >
-          <button className="inline-flex items-center px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-medium rounded-full transition-colors shadow-sm hover:shadow-md">
-            View All Case Studies
-            <FiArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-          </button>
+          <div className="inline-flex flex-col items-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-orange-400/30 transition-all"
+            >
+              View More Projects
+            </motion.button>
+            <p className="text-sm text-gray-500 mt-4">
+              We've completed 200+ successful events and installations
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

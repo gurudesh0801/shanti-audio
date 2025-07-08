@@ -24,8 +24,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", href: "/", icon: <FiVolume2 /> },
     { name: "Services", href: "/services", icon: <FiHeadphones /> },
-    { name: "Portfolio", href: "/portfolio", icon: <FiMusic /> },
-    { name: "Equipment", href: "/equipment", icon: <FiMic /> },
+    { name: "Portfolio", href: "#portfolio", icon: <FiMusic /> },
     { name: "Contact", href: "/contact", icon: <FiVolume2 /> },
   ];
 
