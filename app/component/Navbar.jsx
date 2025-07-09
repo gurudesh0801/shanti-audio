@@ -72,11 +72,11 @@ const Navbar = () => {
             >
               {/* Logo Image */}
               <Image
-                src="/logo.JPG"
+                src="/logo.png"
                 alt="Shanti Audio Logo"
                 width={120}
                 height={100}
-                className="rounded"
+                className={`rounded ${scrolled ? "invert" : ""}`}
               />
             </Link>
           </motion.div>
