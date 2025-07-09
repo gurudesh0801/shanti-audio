@@ -12,7 +12,7 @@ export default function PortfolioShowcase() {
       category: "Live Sound",
       description:
         "Full audio production for 3-day outdoor festival with 20,000+ attendees",
-      image: "/image5.jpg",
+      image: "/image15.jpg",
       videoLink: "https://example.com/videos/festival",
       detailsLink: "/portfolio/festival",
     },
@@ -22,7 +22,7 @@ export default function PortfolioShowcase() {
       category: "Corporate AV",
       description:
         "Audio solutions for main stage and breakout rooms at international tech conference",
-      image: "/image18.jpg",
+      image: "/image23.jpg",
       videoLink: "https://example.com/videos/conference",
       detailsLink: "/portfolio/conference",
     },
@@ -32,22 +32,22 @@ export default function PortfolioShowcase() {
       category: "Event Handle",
       description:
         "Custom sound system design and installation for premium event venue",
-      image: "/image15.jpg",
+      image: "/image5.jpg",
       videoLink: "https://example.com/videos/jazzclub",
       detailsLink: "/portfolio/jazzclub",
     },
     {
-      id: 3,
+      id: 4,
       title: "Live Event",
       category: "Event Handle",
       description:
         "Custom sound system design and installation for premium event venue",
-      image: "/image23.jpg",
+      image: "/image26.jpg",
       videoLink: "https://example.com/videos/jazzclub",
       detailsLink: "/portfolio/jazzclub",
     },
     {
-      id: 3,
+      id: 5,
       title: "Live Event",
       category: "Event Handle",
       description:
@@ -57,7 +57,7 @@ export default function PortfolioShowcase() {
       detailsLink: "/portfolio/jazzclub",
     },
     {
-      id: 3,
+      id: 6,
       title: "Live Event",
       category: "Event Handle",
       description:

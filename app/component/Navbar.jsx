@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -24,7 +25,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Home", href: "/", icon: <FiVolume2 /> },
     { name: "Services", href: "/services", icon: <FiHeadphones /> },
-    { name: "Portfolio", href: "#portfolio", icon: <FiMusic /> },
+    { name: "Portfolio", href: "/portfolio", icon: <FiMusic /> },
     { name: "Contact", href: "/contact", icon: <FiVolume2 /> },
   ];
 
@@ -59,6 +60,7 @@ const Navbar = () => {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
+
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -66,22 +68,16 @@ const Navbar = () => {
           >
             <Link
               href="/"
-              className="text-xl sm:text-2xl font-bold flex items-center"
+              className="text-xl sm:text-2xl font-bold flex items-center space-x-2"
             >
-              <FiVolume2
-                className={`mr-2 ${
-                  scrolled ? "text-[#D5451B]" : "text-[#FF9B45]"
-                }`}
+              {/* Logo Image */}
+              <Image
+                src="/logo.jpg"
+                alt="Shanti Audio Logo"
+                width={120}
+                height={100}
+                className="rounded"
               />
-              <span
-                className={`${
-                  scrolled
-                    ? "bg-clip-text text-transparent bg-gradient-to-r from-[#D5451B] to-[#FF9B45]"
-                    : "text-white"
-                }`}
-              >
-                Shanti Audio
-              </span>
             </Link>
           </motion.div>
 

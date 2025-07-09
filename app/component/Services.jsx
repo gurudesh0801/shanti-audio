@@ -9,13 +9,14 @@ import {
   FiCalendar,
 } from "react-icons/fi";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProfessionalServicesShowcase() {
   const serviceList = [
     {
       name: "Live Event Sound",
       description: "Professional audio solutions for concerts and festivals",
-      image: "/image12.jpg",
+      image: "/image15.jpg",
       features: [
         "Line array systems for perfect coverage",
         "Expert sound engineering team",
@@ -179,14 +180,16 @@ export default function ProfessionalServicesShowcase() {
           className="mt-20 text-center"
         >
           <div className="inline-flex flex-col items-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-orange-400/30 transition-all flex items-center gap-3"
-            >
-              <FiCalendar className="text-white" />
-              Book a Consultation
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-orange-500 to-amber-500 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-orange-400/30 transition-all flex items-center gap-3"
+              >
+                <FiCalendar className="text-white" />
+                Book a Consultation
+              </motion.button>
+            </Link>
             <p className="text-sm text-gray-500 mt-4">
               Let's discuss how we can make your event sound perfect
             </p>

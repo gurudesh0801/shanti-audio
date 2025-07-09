@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowRight, FiVolume2 } from "react-icons/fi";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ShantiAudioHero() {
   const { scrollYProgress } = useScroll();
@@ -104,23 +105,27 @@ export default function ShantiAudioHero() {
           transition={{ duration: 1, delay: 0.8 }}
           className="flex flex-wrap justify-center gap-4"
         >
-          <motion.button
-            whileHover={{ scale: 1.03, backgroundColor: "#ea580c" }} // Darker orange on hover
-            whileTap={{ scale: 0.98 }}
-            className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-full text-white font-medium flex items-center gap-2 transition-colors"
-          >
-            Our Services <FiArrowRight />
-          </motion.button>
-          <motion.button
-            whileHover={{
-              scale: 1.03,
-              backgroundColor: "rgba(255,255,255,0.1)",
-            }}
-            whileTap={{ scale: 0.98 }}
-            className="border border-orange-400/30 text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium backdrop-blur-sm transition-colors"
-          >
-            Book Consultation
-          </motion.button>
+          <Link href="/services">
+            <motion.button
+              whileHover={{ scale: 1.03, backgroundColor: "#ea580c" }} // Darker orange on hover
+              whileTap={{ scale: 0.98 }}
+              className="bg-orange-500 hover:bg-orange-600 px-8 py-3 rounded-full text-white font-medium flex items-center gap-2 transition-colors"
+            >
+              Our Services <FiArrowRight />
+            </motion.button>
+          </Link>
+          <Link href="/contact">
+            <motion.button
+              whileHover={{
+                scale: 1.03,
+                backgroundColor: "rgba(255,255,255,0.1)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="border border-orange-400/30 text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium backdrop-blur-sm transition-colors"
+            >
+              Book Consultation
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Orange Sound Wave Visualizer */}

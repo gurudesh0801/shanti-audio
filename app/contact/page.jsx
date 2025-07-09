@@ -76,7 +76,7 @@ const page = () => {
         {heights.map((h, i) => (
           <div
             key={i}
-            className="w-1 bg-blue-400 rounded-t transition-all duration-300"
+            className="w-1 bg-amber-500 rounded-t transition-all duration-300"
             style={{ height: `${h * 4}px` }}
           />
         ))}
@@ -102,7 +102,7 @@ const page = () => {
           <div className="max-w-6xl mx-auto">
             {/* Header with animated sound wave */}
             <div className="flex flex-col items-center mb-16 pt-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              <h1 className="text-4xl md:text-5xl font-bold text-center mb-6 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-orange-600">
                 Let's Talk Sound
               </h1>
               <div className="w-40">
@@ -116,21 +116,21 @@ const page = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-xl">
-                <h2 className="text-2xl font-semibold mb-6">
+              <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 border border-orange-900 shadow-xl">
+                <h2 className="text-2xl font-semibold mb-6 text-amber-100">
                   Send us a message
                 </h2>
 
                 {submitSuccess ? (
-                  <div className="bg-green-900/30 border border-green-700 rounded-lg p-6 text-center">
-                    <div className="text-green-400 text-5xl mb-4">✓</div>
+                  <div className="bg-orange-900/30 border border-orange-700 rounded-lg p-6 text-center">
+                    <div className="text-amber-400 text-5xl mb-4">✓</div>
                     <h3 className="text-xl font-medium mb-2">Message Sent!</h3>
-                    <p className="text-gray-300">
+                    <p className="text-amber-100">
                       We've received your message and will get back to you soon.
                     </p>
                     <button
                       onClick={() => setSubmitSuccess(false)}
-                      className="mt-6 px-6 py-2 bg-green-600 hover:bg-green-700 rounded-full transition-colors"
+                      className="mt-6 px-6 py-2 bg-amber-600 hover:bg-amber-700 rounded-full transition-colors text-white"
                     >
                       Send another message
                     </button>
@@ -140,7 +140,7 @@ const page = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-300 mb-1"
+                        className="block text-sm font-medium text-amber-100 mb-1"
                       >
                         Your Name
                       </label>
@@ -151,7 +151,7 @@ const page = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                        className="w-full px-4 py-3 bg-gray-700 border border-orange-900 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition text-white placeholder-gray-400"
                         placeholder="John Smith"
                       />
                     </div>
@@ -159,7 +159,7 @@ const page = () => {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-300 mb-1"
+                        className="block text-sm font-medium text-amber-100 mb-1"
                       >
                         Email Address
                       </label>
@@ -170,7 +170,7 @@ const page = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                        className="w-full px-4 py-3 bg-gray-700 border border-orange-900 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition text-white placeholder-gray-400"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -178,7 +178,7 @@ const page = () => {
                     <div>
                       <label
                         htmlFor="service"
-                        className="block text-sm font-medium text-gray-300 mb-1"
+                        className="block text-sm font-medium text-amber-100 mb-1"
                       >
                         Service Needed
                       </label>
@@ -187,7 +187,7 @@ const page = () => {
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition appearance-none"
+                        className="w-full px-4 py-3 bg-gray-700 border border-orange-900 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition appearance-none text-white"
                       >
                         {services.map((service) => (
                           <option key={service.value} value={service.value}>
@@ -200,7 +200,7 @@ const page = () => {
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-gray-300 mb-1"
+                        className="block text-sm font-medium text-amber-100 mb-1"
                       >
                         Your Message
                       </label>
@@ -211,7 +211,7 @@ const page = () => {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                        className="w-full px-4 py-3 bg-gray-700 border border-orange-900 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition text-white placeholder-gray-400"
                         placeholder="Tell us about your sound needs..."
                       />
                     </div>
@@ -221,8 +221,8 @@ const page = () => {
                       disabled={isSubmitting}
                       className={`w-full py-3 px-6 rounded-full font-medium transition-all ${
                         isSubmitting
-                          ? "bg-blue-700 cursor-not-allowed"
-                          : "bg-blue-600 hover:bg-blue-500 shadow-lg hover:shadow-blue-500/30"
+                          ? "bg-amber-800 cursor-not-allowed"
+                          : "bg-amber-600 hover:bg-amber-500 shadow-lg hover:shadow-amber-500/30 text-white"
                       }`}
                     >
                       {isSubmitting ? (
@@ -259,16 +259,16 @@ const page = () => {
 
               {/* Contact Info & Visual Elements */}
               <div className="space-y-8">
-                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-xl">
-                  <h2 className="text-2xl font-semibold mb-6">
+                <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 border border-orange-900 shadow-xl">
+                  <h2 className="text-2xl font-semibold mb-6 text-amber-100">
                     Contact Information
                   </h2>
                   <div className="space-y-6">
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 bg-blue-500/20 p-3 rounded-lg">
+                      <div className="flex-shrink-0 bg-amber-500/20 p-3 rounded-lg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 text-blue-400"
+                          className="h-6 w-6 text-amber-400"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -282,18 +282,18 @@ const page = () => {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-lg font-medium text-gray-100">
+                        <h3 className="text-lg font-medium text-amber-100">
                           Phone
                         </h3>
-                        <p className="text-gray-400 mt-1">+1 (555) 123-4567</p>
+                        <p className="text-amber-200 mt-1">+1 (555) 123-4567</p>
                       </div>
                     </div>
 
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 bg-purple-500/20 p-3 rounded-lg">
+                      <div className="flex-shrink-0 bg-orange-500/20 p-3 rounded-lg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 text-purple-400"
+                          className="h-6 w-6 text-orange-400"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -307,20 +307,20 @@ const page = () => {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-lg font-medium text-gray-100">
+                        <h3 className="text-lg font-medium text-amber-100">
                           Email
                         </h3>
-                        <p className="text-gray-400 mt-1">
+                        <p className="text-amber-200 mt-1">
                           contact@soundservices.com
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-start">
-                      <div className="flex-shrink-0 bg-green-500/20 p-3 rounded-lg">
+                      <div className="flex-shrink-0 bg-amber-600/20 p-3 rounded-lg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 text-green-400"
+                          className="h-6 w-6 text-amber-500"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -340,21 +340,23 @@ const page = () => {
                         </svg>
                       </div>
                       <div className="ml-4">
-                        <h3 className="text-lg font-medium text-gray-100">
+                        <h3 className="text-lg font-medium text-amber-100">
                           Office
                         </h3>
-                        <p className="text-gray-400 mt-1">
+                        <p className="text-amber-200 mt-1">
                           123 Sound Avenue, Suite 400
                         </p>
-                        <p className="text-gray-400">Audio City, AC 12345</p>
+                        <p className="text-amber-200">Audio City, AC 12345</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Service Hours */}
-                <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 shadow-xl">
-                  <h2 className="text-2xl font-semibold mb-6">Service Hours</h2>
+                <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl p-8 border border-orange-900 shadow-xl">
+                  <h2 className="text-2xl font-semibold mb-6 text-amber-100">
+                    Service Hours
+                  </h2>
                   <div className="space-y-4">
                     {[
                       { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
@@ -363,22 +365,22 @@ const page = () => {
                     ].map((item, index) => (
                       <div
                         key={index}
-                        className="flex justify-between py-3 border-b border-gray-700 last:border-0"
+                        className="flex justify-between py-3 border-b border-orange-900 last:border-0"
                       >
-                        <span className="text-gray-300">{item.day}</span>
-                        <span className="text-gray-400">{item.hours}</span>
+                        <span className="text-amber-100">{item.day}</span>
+                        <span className="text-amber-200">{item.hours}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Emergency Contact */}
-                <div className="bg-red-900/20 backdrop-blur-sm rounded-2xl p-6 border border-red-800/50 shadow-xl">
+                <div className="bg-orange-900/30 backdrop-blur-sm rounded-2xl p-6 border border-orange-800 shadow-xl">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 bg-red-500/30 p-3 rounded-lg">
+                    <div className="flex-shrink-0 bg-amber-600/30 p-3 rounded-lg">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-red-400"
+                        className="h-6 w-6 text-amber-500"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -392,13 +394,13 @@ const page = () => {
                       </svg>
                     </div>
                     <div className="ml-4">
-                      <h3 className="text-lg font-medium text-gray-100">
+                      <h3 className="text-lg font-medium text-amber-100">
                         Emergency Sound Support
                       </h3>
-                      <p className="text-gray-400 mt-1">
+                      <p className="text-amber-200 mt-1">
                         For urgent event sound issues, call our 24/7 line:
                       </p>
-                      <p className="text-red-400 font-medium mt-2">
+                      <p className="text-amber-400 font-medium mt-2">
                         +1 (555) 987-6543
                       </p>
                     </div>

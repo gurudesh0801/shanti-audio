@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import {
   FiMusic,
   FiCalendar,
@@ -163,10 +164,12 @@ export default function IndustriesServed() {
                   </div>
                   <p className="text-white/80 mb-4">{industry.description}</p>
 
-                  <button className="text-orange-400 hover:text-orange-300 text-sm font-medium flex items-center gap-1 transition-colors">
-                    View Solutions{" "}
-                    <FiArrowRight className="transition-transform group-hover:translate-x-1" />
-                  </button>
+                  <Link href="/services">
+                    <button className="text-orange-400 hover:text-orange-300 text-sm font-medium flex items-center gap-1 transition-colors">
+                      View Solutions{" "}
+                      <FiArrowRight className="transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
