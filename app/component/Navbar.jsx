@@ -72,7 +72,7 @@ const Navbar = () => {
             >
               {/* Logo Image */}
               <Image
-                src="/logo.jpg"
+                src="/logo.JPG"
                 alt="Shanti Audio Logo"
                 width={120}
                 height={100}
